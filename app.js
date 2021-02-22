@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
@@ -13,6 +14,7 @@ mongoose.connect('mongodb://localhost:27017/user1Db',  { useNewUrlParser: true, 
 
 app.set('view engine', 'ejs')
 
+console.log(process.env.API_KEY); // this is for sample onley we didnt use it in this project as a code
 
 app.get('/', function(req, res){
   res.render('home')

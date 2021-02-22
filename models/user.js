@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
 });
 
 
-const secret = 'ourlitlesecrettext';
-userSchema.plugin(encrypt, { secret: secret, encryptedFields: ['password'] }); // you want to add other element , and add after password
+
+userSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ['password'] }); // you want to add other element , and add after password
 
 const User = module.exports = mongoose.model('user', userSchema);
